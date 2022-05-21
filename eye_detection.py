@@ -5,7 +5,7 @@ def process(image):
     faces = face_cascade.detectMultiScale(gray, 1.1, 4)
 
     for (x, y, w, h) in faces:
-        cv.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 3)
+        #cv.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 3)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = image[y:y+h, x:x+w]
         eyes = eye_cascade.detectMultiScale(roi_gray)
