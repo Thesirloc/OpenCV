@@ -11,8 +11,14 @@ while True:
     if frame is None:
         break
     fgmask = fgbg.apply(frame) #foreground mask
+    fgmask = fgmask.reshape(fgmask.shape + (3,))
+    # colorforeground = np.multiply(fgmask, frame)
+    print(fgmask.shape)
+    print('a')
+    print(frame.shape)
     cv.imshow('Frame', frame)
     cv.imshow('FG mask', fgmask)
+    # cv.imshow('c', colorforeground)
     keyboard = cv.waitKey(30)
     if keyboard == 'q' or keyboard ==27:
         break
